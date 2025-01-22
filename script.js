@@ -6,9 +6,9 @@ const images = [
 ];
 let currentIndex = 0;
 
-const mainImage = document.getElementById("mainImage");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
+const mainImage = document.getElementById("main-image");
+const prevBtn = document.getElementById("previous");
+const nextBtn = document.getElementById("next");
 
 document.addEventListener("DOMContentLoaded", () => {
     const updateImage = () => {
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     updateImage();
 
     nextBtn.addEventListener("click", function () {
-        currentIndex = (currentIndex + 1) % images.length; // Move to next, loop back at end
+        currentIndex = (currentIndex + 1) % images.length;
         updateImage();
     });
 
     prevBtn.addEventListener("click", function () {
-        currentIndex = (currentIndex - 1 + images.length) % images.length; // Move to previous, loop back at start
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
         updateImage();
     });
 });
